@@ -9,6 +9,7 @@ import { Router } from '@angular/router'; // Import Router
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  nameToSend: string = "";
   constructor(private apiService: ApiService,
     private router: Router
     ) 
@@ -26,12 +27,14 @@ export class HomePage {
           && 
           item.password === name.password
         );
+      console.log(matchingNames);
+      this.nameToSend = matchingNames[0].name;
         // const matchingPassword = response.filter(item2 => item.password === name);
         // if (matchingNames.length > 0 && matchingNames[0].password === name.password) {
 
           if (matchingNames.length > 0) {
           alert ('Correct details');
-          this.router.navigateByUrl('/success');
+          this.router.navigateByUrl(`/success?name=${this.nameToSend}`);
           // console.log('correct')
 
         } else {
