@@ -33,7 +33,7 @@ export class HomePage {
         // if (matchingNames.length > 0 && matchingNames[0].password === name.password) {
 
           if (matchingNames.length > 0) {
-          alert ('Correct details');
+          // alert ('Correct details');
           this.router.navigateByUrl(`/success?name=${this.nameToSend}`);
           // console.log('correct')
 
